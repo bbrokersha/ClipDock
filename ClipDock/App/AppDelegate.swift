@@ -116,7 +116,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     func showWelcome() {
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 420, height: 340), styleMask: [.titled, .closable], backing: .buffered, defer: false)
         window.title = "Welcome to ClipDock"; window.isReleasedWhenClosed = false
-        window.contentView = NSHostingView(rootView: WelcomeView(shortcut: state.store.settings.hotKey.label) { [weak self] settings in
+        window.contentView = NSHostingView(rootView: WelcomeView(shortcut: state.store.settings.hotKey.displayLabel) { [weak self] settings in
             guard let self else { return }
             self.state.store.settings.hasOnboarded = true; self.welcomeWindow?.close()
             if settings { self.openSettings() } else { self.presentPanel() }

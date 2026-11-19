@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 source_app="${1:-/tmp/ClipDock-Release/ClipDock.app}"
-output="${2:-/tmp/ClipDock-0.3.0.dmg}"
+output="${2:-/tmp/ClipDock-0.3.1.dmg}"
 if [[ ! -d "$source_app" || -e "$output" ]]; then
   echo 'Provide an existing ClipDock.app and an output path that does not exist.' >&2
   exit 1

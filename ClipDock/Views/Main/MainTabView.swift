@@ -13,7 +13,7 @@ struct MainTabView: View {
                 Image(systemName: "square.on.square.fill").foregroundStyle(.tint)
                 Text("ClipDock").font(.system(size: 13, weight: .semibold))
                 Spacer()
-                Text(store.settings.hotKey.label).font(.system(size: 11, design: .monospaced)).foregroundStyle(.secondary)
+                Text(store.settings.hotKey.displayLabel).font(.system(size: 11, design: .monospaced)).foregroundStyle(.secondary)
                 Menu {
                     Button("Actions…") { state.settingsSection = "Actions"; state.openSettings?() }
                     Button("Settings…") { state.openSettings?() }

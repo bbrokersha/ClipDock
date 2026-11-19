@@ -1,4 +1,4 @@
-ClipDock 0.3.0 — folder installer
+ClipDock 0.3.1 — folder installer
 
 Requires macOS 14+, Apple Silicon or Intel. Xcode is not required.
 Keep ClipDock.app and Install ClipDock.app together in this folder.

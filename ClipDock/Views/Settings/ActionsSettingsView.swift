@@ -26,7 +26,7 @@ struct ActionsSettingsView: View {
                         Button("Delete", role: .destructive) { controller.remove(action) }.disabled(controller.running != nil || controller.enabled.contains(action.id))
                     }
                     Text(action.detail).font(.caption)
-                    Text(action.shortcut?.label ?? "No global shortcut").font(.caption).foregroundStyle(.secondary)
+                    Text(action.shortcut?.displayLabel ?? "No global shortcut").font(.caption).foregroundStyle(.secondary)
                 }
             }
             Button("Add action…") { draft = UserAction() }.disabled(controller.running != nil)
@@ -75,7 +75,7 @@ struct ShortcutPicker: View {
     @State private var monitor: Any?
     var body: some View {
         HStack {
-            Button(monitor == nil ? (value?.label ?? "Assign shortcut…") : "Press shortcut (Esc cancels)") { record() }
+            Button(monitor == nil ? (value?.displayLabel ?? "Assign shortcut…") : "Press shortcut (Esc cancels)") { record() }
             Button("Clear") { end(); value = nil }
         }.onDisappear { end() }
     }

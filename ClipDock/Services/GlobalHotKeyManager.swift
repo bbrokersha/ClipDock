@@ -8,6 +8,7 @@ import ClipDockCore
 final class GlobalHotKeyManager {
     private static var nextID: UInt32 = 0
     private let identifier: UInt32
+    private var registeredValue: HotKey?
     private var hotKey: EventHotKeyRef?
     private var handler: EventHandlerRef?
     var onTrigger: (() -> Void)?
@@ -26,14 +27,17 @@ final class GlobalHotKeyManager {
         }, 1, &event, Unmanaged.passUnretained(self).toOpaque(), &handler)
     }
     func register(_ value: HotKey) -> Bool {
+        if let registeredValue, registeredValue.keyCode == value.keyCode, registeredValue.modifiers == value.modifiers { return true }
         var candidate: EventHotKeyRef?
         let id = EventHotKeyID(signature: 0x434C4950, id: identifier)
         guard RegisterEventHotKey(value.keyCode, value.modifiers, id, GetApplicationEventTarget(), 0, &candidate) == noErr else { return false }
         if let hotKey { UnregisterEventHotKey(hotKey) }
         hotKey = candidate
+        registeredValue = value
         return true
     }
     func stop() {
+        registeredValue = nil
         if let hotKey { UnregisterEventHotKey(hotKey); self.hotKey = nil }
         if let handler { RemoveEventHandler(handler); self.handler = nil }
     }

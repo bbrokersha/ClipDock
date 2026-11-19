@@ -1,6 +1,11 @@
 import XCTest
 @testable import ClipDockCore
 final class ActionLibraryTests: XCTestCase {
+    func testShortcutLabelsUseArrowAndDigitNames() {
+        XCTAssertEqual(HotKey(keyCode: 123, modifiers: 768, label: "bad glyph").displayLabel, "⇧⌘ ←")
+        XCTAssertEqual(HotKey(keyCode: 19, modifiers: 768, label: "⇧⌘ @").displayLabel, "⇧⌘ 2")
+    }
+
     func testActionsRoundTripAndEditDelete() throws {
         let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         defer { try? FileManager.default.removeItem(at: root) }

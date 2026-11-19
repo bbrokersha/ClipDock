@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.1
+
+- Show live login registration status and pending approval.
+- Prevent enabling login startup from temporary or mounted-image copies.
+- Avoid re-registering an unchanged global shortcut.
+- Verify panel and Game Mode shortcut persistence across reloads.
+
 ## 0.3.0 — release candidate
 
 - Add graphical local action editing, persistence, per-action global shortcuts,

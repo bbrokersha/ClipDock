@@ -1,4 +1,4 @@
-ClipDock 0.3.0 — installation
+ClipDock 0.3.1 — installation
 
 Requires macOS 14 or later. Supports Apple Silicon and Intel.
 

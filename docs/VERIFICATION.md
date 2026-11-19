@@ -34,3 +34,25 @@ Environment: macOS 27.0.1, Xcode macOS 27 SDK, Apple Silicon development host.
 Automated success is not proof of these manual behaviors. This candidate must not
 be represented as a fully verified public release until the gates are completed.
 No screenshots are included because no new, synthetic-data UI capture was verified.
+
+## 0.3.1 startup repair
+
+The affected host had no ClipDock installed in /Applications or ~/Applications
+and no running ClipDock process. Both panel and Game Mode shortcuts remained
+in the saved settings. Global shortcuts require a running process.
+
+Login settings now show live Service Management status, distinguish pending
+approval, refresh when the app becomes active, and prevent registration from
+transient locations. Identical hotkey registrations are idempotent.
+Added regression checks for installed paths and both shortcuts across reloads.
+A real logout/login is still UNVERIFIED_MANUAL; registration alone is not proof
+that macOS launches the app on the next login.
+
+On November 19, the installed copy reported launch at login enabled. macOS's
+background item database also reported /Applications/ClipDock.app enabled and
+allowed. The saved panel shortcut opened ClipDock from Finder. A real subsequent
+login remains UNVERIFIED_MANUAL. Game Mode hotkey invocation through the UI tool
+was inconclusive; do not count it as a passed physical-keyboard test.
+
+Shortcut labels now normalize arrow and number keys without modifying the saved
+key codes or modifier flags.

@@ -17,6 +17,15 @@ public struct HotKey: Codable, Equatable, Sendable {
     public var keyCode: UInt32
     public var modifiers: UInt32
     public var label: String
+    public var displayLabel: String {
+        let names: [UInt32: String] = [18: "1", 19: "2", 20: "3", 21: "4", 23: "5", 22: "6", 26: "7", 28: "8", 25: "9", 29: "0", 49: "Space", 36: "Return", 48: "Tab", 51: "Delete", 123: "←", 124: "→", 125: "↓", 126: "↑"]
+        guard let name = names[keyCode] else { return label }
+        var prefix = ""
+        for (mask, symbol): (UInt32, String) in [(4096, "⌃"), (2048, "⌥"), (512, "⇧"), (256, "⌘")] {
+            if modifiers & mask != 0 { prefix += symbol }
+        }
+        return prefix + " " + name
+    }
     public init(keyCode: UInt32 = 49, modifiers: UInt32 = 2048, label: String = "⌥ Space") {
         self.keyCode = keyCode; self.modifiers = modifiers; self.label = label
     }

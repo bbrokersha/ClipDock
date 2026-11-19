@@ -7,13 +7,13 @@ account, analytics or AI service.
 ## Requirements
 
 macOS 14 or later, Apple Silicon or Intel. Xcode is needed only to build from source.
-A personal open-source project under active development. Version 0.3.0 is experimental.
+A personal open-source project under active development. Version 0.3.1 is experimental.
 
 [Download pre-releases](https://github.com/TESA1DE/ClipDock/releases) · [Verification status](docs/VERIFICATION.md) · [Changelog](CHANGELOG.md)
 
 ## Install
 
-Open `ClipDock-0.3.0.dmg`, drag **ClipDock** onto **Applications**, then eject the
+Open `ClipDock-0.3.1.dmg`, drag **ClipDock** onto **Applications**, then eject the
 image and launch the installed app. Look for the icon in the menu bar. Enable
 launch at login in Settings only if desired. Run one copy at a time.
 
@@ -87,7 +87,7 @@ system Game Mode and does not change scheduling, GPU or performance settings.
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 swift test --scratch-path /tmp/ClipDock-tests
 ./scripts/build-app.sh
-./scripts/build-dmg.sh /tmp/ClipDock-Release/ClipDock.app /tmp/ClipDock-0.3.0.dmg
+./scripts/build-dmg.sh /tmp/ClipDock-Release/ClipDock.app /tmp/ClipDock-0.3.1.dmg
 ```
 
 The build creates a universal app outside iCloud directories, whose metadata can

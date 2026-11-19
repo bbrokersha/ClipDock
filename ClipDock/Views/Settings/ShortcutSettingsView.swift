@@ -14,11 +14,14 @@ struct ShortcutSettingsView: View {
             HStack {
                 Text("Open ClipDock")
                 Spacer()
-                Button(recording ? "Press shortcut…" : store.settings.hotKey.label) { startRecording() }
+                Button(recording ? "Press shortcut…" : store.settings.hotKey.displayLabel) { startRecording() }
                     .font(.system(.body, design: .monospaced)).frame(minWidth: 130)
             }
             Text(hint ?? "Click the shortcut, then press a key with Command, Option, or Control. Escape cancels.").font(.caption).foregroundStyle(.secondary)
             Button("Restore Option + Space") { stopRecording(); if store.settings.hotKey != HotKey() { store.settings.hotKey = HotKey() } }
+        }
+        Section("Availability") {
+            Text("Global shortcuts work while ClipDock is running. Enable Launch ClipDock at login in General to keep them available after signing in.").font(.caption).foregroundStyle(.secondary)
         }
         Section("In the Panel") {
             shortcut("Navigate clipboard", "↑ / ↓")
