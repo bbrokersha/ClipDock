@@ -9,7 +9,7 @@ account, analytics or AI service.
 macOS 14 or later, Apple Silicon or Intel. Xcode is needed only to build from source.
 A personal open-source project under active development. Version 0.3.1 is experimental.
 
-[Download pre-releases](https://github.com/TESA1DE/ClipDock/releases) · [Verification status](docs/VERIFICATION.md) · [Changelog](CHANGELOG.md)
+[Download pre-releases](https://github.com/bbrokersha/ClipDock/releases) · [Verification status](docs/VERIFICATION.md) · [Changelog](CHANGELOG.md)
 
 ## Install
 
@@ -20,7 +20,7 @@ launch at login in Settings only if desired. Run one copy at a time.
 This build is ad-hoc signed, **not Developer ID signed or notarized**. Gatekeeper
 may block it on another Mac. Follow [Apple's instructions](https://support.apple.com/102445)
 only if you trust the source. Do not disable Gatekeeper or remove quarantine.
-Downloads are available under [Releases](https://github.com/TESA1DE/ClipDock/releases).
+Downloads are available under [Releases](https://github.com/bbrokersha/ClipDock/releases).
 Pre-releases are intended for testing, not as a claim of complete hardware validation.
 
 ## Features

@@ -23,4 +23,4 @@ changed and restored manually in Keyboard settings. Physical keyboard behavior
 and complete Game Mode cycling are UNVERIFIED_MANUAL. LinearMouse is not bundled.
 
 Source, known limitations and verification status:
-https://github.com/TESA1DE/ClipDock
+https://github.com/bbrokersha/ClipDock

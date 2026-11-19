@@ -16,4 +16,4 @@ If macOS blocks it, follow https://support.apple.com/102445 only if you trust it
 Do not disable Gatekeeper. Managed Macs may prohibit running it.
 Automatic paste requires user-granted Accessibility access; otherwise use Command-V.
 
-Project and limitations: https://github.com/TESA1DE/ClipDock
+Project and limitations: https://github.com/bbrokersha/ClipDock
