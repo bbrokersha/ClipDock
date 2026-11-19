@@ -51,8 +51,10 @@ that macOS launches the app on the next login.
 On November 19, the installed copy reported launch at login enabled. macOS's
 background item database also reported /Applications/ClipDock.app enabled and
 allowed. The saved panel shortcut opened ClipDock from Finder. A real subsequent
-login remains UNVERIFIED_MANUAL. Game Mode hotkey invocation through the UI tool
-was inconclusive; do not count it as a passed physical-keyboard test.
+login remains UNVERIFIED_MANUAL. The owner subsequently confirmed on November 19
+that pressing Shift-Command-Left on the physical keyboard opens the Game Mode
+confirmation dialog. Hotkey invocation is manually verified; this does not verify
+function-key behavior or the complete Game Mode ON/OFF cycle.
 
 Shortcut labels now normalize arrow and number keys without modifying the saved
 key codes or modifier flags.
